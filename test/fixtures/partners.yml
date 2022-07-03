@@ -2,12 +2,10 @@
 
 one:
   showcase: one
-  title: MyString
-  url: MyString
-  description: MyText
+  user: one
+  name: MyString
 
 two:
   showcase: two
-  title: MyString
-  url: MyString
-  description: MyText
+  user: two
+  name: MyString

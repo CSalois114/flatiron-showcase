@@ -2,8 +2,16 @@
 
 one:
   user: one
+  name: MyString
+  description: MyText
+  url: MyString
+  kind: 
   order: 1
 
 two:
   user: two
+  name: MyString
+  description: MyText
+  url: MyString
+  kind: 
   order: 1

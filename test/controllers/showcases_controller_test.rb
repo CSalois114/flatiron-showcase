@@ -12,7 +12,7 @@ class ShowcasesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create showcase" do
     assert_difference("Showcase.count") do
-      post showcases_url, params: { showcase: { order: @showcase.order, user_id: @showcase.user_id } }, as: :json
+      post showcases_url, params: { showcase: { description: @showcase.description, name: @showcase.name, order: @showcase.order, kind: @showcase.kind, url: @showcase.url, user_id: @showcase.user_id } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class ShowcasesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update showcase" do
-    patch showcase_url(@showcase), params: { showcase: { order: @showcase.order, user_id: @showcase.user_id } }, as: :json
+    patch showcase_url(@showcase), params: { showcase: { description: @showcase.description, name: @showcase.name, order: @showcase.order, kind: @showcase.kind, url: @showcase.url, user_id: @showcase.user_id } }, as: :json
     assert_response :success
   end
 

@@ -2,12 +2,8 @@
 
 one:
   showcase: one
-  name: MyString
-  description: MyText
-  url: MyString
+  skill: one
 
 two:
   showcase: two
-  name: MyString
-  description: MyText
-  url: MyString
+  skill: two

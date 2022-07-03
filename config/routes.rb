@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  resources :skills
+  resources :partners
+  resources :showcases
+  resources :used_skills
   resources :videos
   resources :repositories
-  resources :skills
-  resources :blog_posts
-  resources :projects
-  resources :showcases
   resources :social_links
   resources :user_infos
   resources :users

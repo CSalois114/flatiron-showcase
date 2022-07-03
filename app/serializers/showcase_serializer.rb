@@ -1,4 +1,4 @@
 class ShowcaseSerializer < ActiveModel::Serializer
-  attributes :id, :order
+  attributes :id, :name, :description, :url, :kind, :order
   has_one :user
 end

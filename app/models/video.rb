@@ -1,3 +1,5 @@
 class Video < ApplicationRecord
-  belongs_to :project
+  belongs_to :showcase
+
+  validates :url, presence: true
 end
