@@ -10,7 +10,15 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user, serializer: UserProfileSerializer, include: [
+      'showcases', 
+      'showcases.repositories', 
+      'showcases.videos', 
+      'showcases.skills', 
+      'skills', 
+      'user_info',
+      'user_info.social_links'
+    ]
   end
 
   # POST /users

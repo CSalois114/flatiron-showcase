@@ -1,9 +1,10 @@
 class Showcase < ApplicationRecord
   belongs_to :user
-  has_many :used_skills
-  has_many :repositories
-  has_many :videos
-  has_many :partners
+  has_many :repositories, dependent: :destroy
+  has_many :videos, dependent: :destroy
+  has_many :partners, dependent: :destroy
+  has_many :used_skills, dependent: :destroy
+  has_many :skills, through: :used_skills
 
   scope :blog, -> { where(kind: :blog) }
   scope :project, -> { where(kind: :project) }
