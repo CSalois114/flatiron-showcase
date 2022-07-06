@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = filter_users
 
     render json: @users
   end
@@ -55,5 +55,14 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:first_name, :last_name)
+    end
+
+    # Filter users by search term
+    def filter_users
+      if params[:search]
+        User.where("first_name like :search OR last_name like :search", search: "%#{params[:search]}%")
+      else 
+        User.all
+      end
     end
 end
