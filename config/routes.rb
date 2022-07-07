@@ -12,4 +12,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get '/users/:user_id/showcases', to: 'showcases#index'
+  get '/users/:user_id/showcases/:id', to: 'showcases#show'
+  patch '/users/:user_id/showcases/:id', to: 'showcases#update'
+  delete '/users/:user_id/showcases/:id', to: 'showcases#destroy'
 end

@@ -3,9 +3,13 @@ class ShowcasesController < ApplicationController
 
   # GET /showcases
   def index
-    @showcases = Showcase.all
+    if params[:user_id]
+      @showcases = Showcase.where(user_id: params[:user_id])
+    else
+      @showcases = Showcase.all
+    end
 
-    render json: @showcases
+    render json: @showcases, include: []
   end
 
   # GET /showcases/1
@@ -13,28 +17,34 @@ class ShowcasesController < ApplicationController
     render json: @showcase
   end
 
-  # POST /showcases
+  # POST users/:user_id/showcases
   def create
     @showcase = Showcase.new(showcase_params)
+    @showcase.skip_position_validation = true
 
     if @showcase.save
-      render json: @showcase, status: :created, location: @showcase
+      render json: @showcase, status: :created
+      update_positions
     else
       render json: @showcase.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /showcases/1
+  # PATCH/PUT users/:user_id/showcases/:id
   def update
+    old_position = @showcase.position
+    @showcase.skip_position_validation = true
     if @showcase.update(showcase_params)
       render json: @showcase
+      update_positions(old_position) if params[:position]
     else
       render json: @showcase.errors, status: :unprocessable_entity
     end
   end
 
-  # DELETE /showcases/1
+  # DELETE users/:user_id/showcases/:id
   def destroy
+    Showcase.shift_positions(params[:user_id], @showcase.position, -1)
     @showcase.destroy
   end
 
@@ -46,6 +56,14 @@ class ShowcasesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def showcase_params
-      params.require(:showcase).permit(:user_id, :name, :description, :url, :kind, :order)
+      params.require(:showcase).permit(:user_id, :name, :description, :url, :kind, :position)
+    end
+
+    #update the position for all showcases if one changes
+    def update_positions old_position=nil
+      @showcase.update(position: -1)
+      Showcase.shift_positions(params[:user_id], old_position + 1, -1) if old_position
+      Showcase.shift_positions(params[:user_id], params[:position], 1)
+      @showcase.update(position: params[:position])
     end
 end

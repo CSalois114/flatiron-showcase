@@ -63,7 +63,7 @@ skills = Skill.all
       description: Faker::Hacker.say_something_smart,
       url: is_project ? ["https://csalois114.github.io/portfolio-website/", nil].sample : medium_articles.sample,
       kind: kind,
-      order: i
+      position: i
     )
 
     5.times do

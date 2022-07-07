@@ -1,5 +1,5 @@
 class ShowcaseSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :url, :kind, :order
+  attributes :id, :name, :description, :url, :kind, :position
   has_one :user
   has_many :videos
   has_many :repositories

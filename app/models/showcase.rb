@@ -1,4 +1,5 @@
 class Showcase < ApplicationRecord
+  attr_accessor :skip_position_validation
   belongs_to :user
   has_many :repositories, dependent: :destroy
   has_many :videos, dependent: :destroy
@@ -11,5 +12,10 @@ class Showcase < ApplicationRecord
 
   validates :name, presence: true
   validates :kind, presence: true, inclusion: { in: %w(blog project), message: "Can't showcase a %{value}" }
-  validates :order, presence: true, uniqueness: { scope: :user } 
+  validates :position, presence: true
+  validates :position, uniqueness: { scope: :user }, unless: :skip_position_validation
+
+  def self.shift_positions user_id, start, offset
+    Showcase.where("user_id = ? AND position >= ?", user_id, start).update_all("position = position + #{offset}")
+  end
 end
