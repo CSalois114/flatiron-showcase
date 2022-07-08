@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
+    p "#######"
     @users = filter_users
 
     render json: @users
@@ -60,7 +61,7 @@ class UsersController < ApplicationController
     # Filter users by search term
     def filter_users
       if params[:search]
-        User.where("first_name like :search OR last_name like :search", search: "%#{params[:search]}%")
+        User.where("first_name iLIKE :search OR last_name iLIKE :search", search: "%#{params[:search]}%")
       else 
         User.all
       end

@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get '/users/:user_id/showcases/:id', to: 'showcases#show'
   patch '/users/:user_id/showcases/:id', to: 'showcases#update'
   delete '/users/:user_id/showcases/:id', to: 'showcases#destroy'
+
+  get '/users/search/:search', to: 'users#index'
 end
