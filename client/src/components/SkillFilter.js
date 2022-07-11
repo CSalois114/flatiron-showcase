@@ -10,7 +10,7 @@ export default function SkillFilter() {
   const filters = useSelector((state) => state.skills.value.filters);
   const dispatch = useDispatch();
 
-  const incrementSkills = () => setNumOfSkills(numOfSkills + 3)
+  const incrementSkills = () => setNumOfSkills(numOfSkills + 5)
 
   const handleAddFilterClick = skill => {
     dispatch(addFilter(skill));
