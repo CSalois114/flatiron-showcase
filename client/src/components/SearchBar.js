@@ -15,7 +15,7 @@ export default function SearchBar() {
     .then(content => dispatch(setContent(content)))
   }
   return (
-    <div>
+    <div id="searchBar" >
       <input
         type="text" 
         onChange={handleChange}

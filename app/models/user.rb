@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :blogs, -> { Showcase.blog }, class_name: :Showcase
 
   has_many :used_skills, through: :showcases
-  has_many :skills, through: :used_skills
+  has_many :skills, -> { distinct }, through: :used_skills
 
   has_one :user_info, dependent: :destroy
 
