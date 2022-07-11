@@ -19,6 +19,7 @@ export default function SearchBar() {
       <input
         type="text" 
         onChange={handleChange}
+        value={searchField}
       />
     </div>
   )

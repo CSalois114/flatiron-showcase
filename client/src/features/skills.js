@@ -20,7 +20,8 @@ export const skillsSlice = createSlice({
       state.value.filters = filterArray(current(state.value).filters, action.payload)
     },
     clearFilters: (state) => {
-      state.value.filteredSkills.push(state.value.filters)
+      console.log(current(state.value).filters)
+      state.value.filteredSkills = state.value.filteredSkills.concat(current(state.value).filters)
       state.value.filters = []
     }
   }
