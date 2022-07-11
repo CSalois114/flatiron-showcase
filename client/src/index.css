@@ -53,3 +53,15 @@ code {
 h4 {
   margin: 5px;
 }
+
+.cardUserImage {
+  max-width: 50px;
+  border-radius: 50%;
+  border: 2px solid gray;
+}
+
+#userImage {
+  max-width: 100px;
+  border-radius: 50%;
+  border: 2px solid black;
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import noUserImg from '../images/no_user.png'
 import { useNavigate } from 'react-router-dom';
 
 export default function UserCard({ user }) {
@@ -7,7 +8,8 @@ export default function UserCard({ user }) {
 
   return (
     <div onClick={() => navigate(`/users/${user.id}`)}> 
-      <p>{user.first_name + " " + user.last_name}</p>
+      <img className='cardUserImage' src={user.image || noUserImg} alt="User Image"/>
+      {user.first_name + " " + user.last_name}
     </div>
   )
 }

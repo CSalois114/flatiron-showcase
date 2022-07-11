@@ -3,9 +3,9 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../features/user"
 import { setSkills } from "../features/skills"
+import { clearUser } from '../features/user';
 
 export default function User() {
-  const skills = useSelector(state => state.skills.value);
   const user = useSelector(state => state.user.value);
   const dispatch = useDispatch();
 
@@ -17,11 +17,12 @@ export default function User() {
     .then(r => r.json())
     .then(userData => {
       dispatch(setUser(userData))
-
-      console.log(userData.skills)
       dispatch(setSkills(userData.skills))
     })
+
+    return () => dispatch(clearUser())
   }, [])
+
   return (
     <div>
       {user.first_name}

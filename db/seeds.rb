@@ -22,7 +22,7 @@ github_repository = [
   "https://github.com/CSalois114/react-typing-game"
 ]
 
-20.times do 
+50.times do 
   Skill.find_or_create_by!(name: Faker::Hacker.adjective)
 end
 skills = Skill.all
@@ -30,7 +30,8 @@ skills = Skill.all
 20.times do 
   user = User.create!(
     first_name: Faker::Name.first_name,
-    last_name:  Faker::Name.last_name
+    last_name:  Faker::Name.last_name,
+    image: [Faker::Avatar.image, nil].sample
   )
 
   user_info = UserInfo.create!(
