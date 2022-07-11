@@ -2,9 +2,9 @@ class UserProfileSerializer < ActiveModel::Serializer
   attributes :id, :first_name, :last_name
 
   has_one :user_info
-  
+  has_many :skills
   has_many :showcases do
-    object.showcases.order(:order)
+    object.showcases.order(:position)
   end
 
   # has_many :projects do

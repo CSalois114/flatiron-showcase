@@ -1,41 +1,14 @@
-import UserCard from './UserCard'
+import User from './User'
 import SearchBar from './SearchBar'
 import ContextMenu from './ContextMenu'
-import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import { setContent } from "../features/content"
-import { setSkills } from "../features/skills"
+import UserList from './UserList'
+import Home from './ShowcaseList'
+import { Routes, Route } from "react-router-dom";
 
 
 function App() {
 
-  const contentArr = useSelector((state) => state.content.value);
-  const skillFilters = useSelector((state) => state.skills.value.filters)
-  const dispatch = useDispatch();
-
-  const filteredContent = (filterType, filters) => {
-      if(filters[0]) {
-        return contentArr.filter(content => (
-          filters.every(filter => (
-            content[filterType].some(contentAtr => (
-              contentAtr.id === filter.id)))
-          )
-        )
-      )
-      } else {
-        return contentArr
-      }
-  }
-
-  useEffect(() => {
-    fetch("/users")
-    .then(r => r.json())
-    .then(users => dispatch(setContent(users)))
-
-    fetch("/skills")
-    .then(r => r.json())
-    .then(data => dispatch(setSkills(data)))
-  }, [])
+ 
   
   return (
     <div id="app">
@@ -45,7 +18,11 @@ function App() {
       <div id="contentWrapper">
         <SearchBar />
         <div id="content">
-          { filteredContent("skills", skillFilters).map(user => <UserCard key={user.id} user={user} />) }
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/users" element={<UserList />} />
+            <Route path="/users/:id" element={<User />} />
+          </Routes>
         </div>
       </div>
     </div>

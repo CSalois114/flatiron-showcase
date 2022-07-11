@@ -8,7 +8,7 @@ export const skillsSlice = createSlice({
   initialState: { value: initialStateValue },
   reducers: {
     setSkills: (state, action) => {
-      state.value = initialStateValue
+      state.value = {...initialStateValue}
       state.value.filteredSkills = action.payload
     },
     addFilter: (state, action) => {
@@ -22,10 +22,13 @@ export const skillsSlice = createSlice({
     clearFilters: (state) => {
       state.value.filteredSkills = state.value.filteredSkills.concat(current(state.value).filters)
       state.value.filters = []
+    },
+    clearSkills: (state) => {
+      state.value = initialStateValue
     }
   }
 })
 
-export const { setSkills, addFilter, removeFilter, clearFilters } = skillsSlice.actions;
+export const { setSkills, addFilter, removeFilter, clearFilters, clearSkills } = skillsSlice.actions;
 
 export default skillsSlice.reducer;

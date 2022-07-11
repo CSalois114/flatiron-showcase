@@ -20,6 +20,8 @@ export default function SkillFilter() {
   return (
     <div id="skillFilter">
 
+      <h4>Filter By Skills Used</h4>
+
       {filters[0] && <button onClick={() => dispatch(clearFilters())}>Clear Filters</button>}
 
       <div id="filterSkillsWrapper">
@@ -32,12 +34,12 @@ export default function SkillFilter() {
         ))}
       </div>
 
-      <div id="skillsSearchWrapper">
+      {skills[0] && <div id="skillsSearchWrapper">
         <input type="text" onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search Skills"/>
-      </div>
+      </div>}
 
       <div id="skillsListWrapper">
-        {skills.filter(skill => skill.name?.includes(searchTerm)).slice(0, numOfSkills).map(skill => (
+        {skills?.filter(skill => skill.name?.includes(searchTerm)).slice(0, numOfSkills).map(skill => (
           <div
             key={skill.id}
             onClick={() => handleAddFilterClick(skill)}
@@ -46,7 +48,7 @@ export default function SkillFilter() {
         ))}
       </div>
       
-      {skills.length > numOfSkills ? <button onClick={incrementSkills}>Show More</button> : null }
+      {skills?.length > numOfSkills ? <button onClick={incrementSkills}>Show More</button> : null }
     </div>
   )
 }
