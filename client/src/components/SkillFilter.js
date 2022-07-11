@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { setSkills, addFilter, removeFilter, clearFilters } from "../features/skills";
+import { addFilter, removeFilter, clearFilters } from "../features/skills";
 
 export default function SkillFilter() {
   const [numOfSkills, setNumOfSkills] = useState(5)
@@ -9,12 +9,6 @@ export default function SkillFilter() {
   const skills = useSelector((state) => state.skills.value.filteredSkills);
   const filters = useSelector((state) => state.skills.value.filters);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    fetch("/skills")
-    .then(r => r.json())
-    .then(data => dispatch(setSkills(data)))
-  }, [])
 
   const incrementSkills = () => setNumOfSkills(numOfSkills + 3)
 

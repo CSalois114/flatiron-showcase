@@ -4,6 +4,7 @@ import ContextMenu from './ContextMenu'
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { setContent } from "../features/content"
+import { setSkills } from "../features/skills"
 
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
     fetch("/users")
     .then(r => r.json())
     .then(users => dispatch(setContent(users)))
+
+    fetch("/skills")
+    .then(r => r.json())
+    .then(data => dispatch(setSkills(data)))
   }, [])
   
   return (
