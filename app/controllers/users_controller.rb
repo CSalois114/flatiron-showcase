@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    p "#######"
     @users = filter_users
 
     render json: @users
