@@ -7,9 +7,12 @@ export default function UserCard({ user }) {
   const navigate = useNavigate();
 
   return (
-    <div onClick={() => navigate(`/users/${user.id}`)}> 
+    <div className='userCard' onClick={() => navigate(`/users/${user.id}`)}> 
       <img className='cardUserImage' src={user.image || noUserImg} alt="User Image"/>
-      {user.first_name + " " + user.last_name}
+      <div className='userInfo'>
+        <p className='name'>{user.first_name + " " + user.last_name}</p>
+        <p className='location'>{user.user_info.location}</p> 
+      </div>
     </div>
   )
 }

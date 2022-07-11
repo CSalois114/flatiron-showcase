@@ -65,3 +65,19 @@ h4 {
   border-radius: 50%;
   border: 2px solid black;
 }
+
+.userInfo {
+  display: inline-block;
+}
+
+.userInfo p{
+  margin: 0px;
+}
+
+.userInfo .location {
+  padding-top: 10px;
+  margin-top: -10px;
+  font-size: 80%;
+  color: gray;
+}
+
