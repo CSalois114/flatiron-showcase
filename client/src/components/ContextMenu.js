@@ -1,6 +1,6 @@
 import React from 'react'
 import SkillFilter from './SkillFilter';
-import noUserImg from '../images/no_user.png'  
+import MenuUser from './MenuUser';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -14,9 +14,7 @@ export default function ContextMenu() {
     <div id="contextMenu" >
       <button onClick={() => navigate("/")}>Home</button>
       <button onClick={() => navigate("/users")}>Users</button>
-      {user.first_name && (
-        <img id='userImage' src={user.image || noUserImg} alt="User Image"/>
-      )}
+      {user.first_name && <MenuUser user={user} />}
       {isSkills && <SkillFilter />}
     </div>
   )

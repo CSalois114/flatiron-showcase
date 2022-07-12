@@ -1,18 +1,20 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { clearSkills } from '../features/skills'
+import BlogCard from './BlogCard'
+import ProjectCard from './ProjectCard'
 
-export default function ShowcaseList() {
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(clearSkills())
-  }, [])
+export default function ShowcaseList({ showcases }) {
+  
+  const createShowcaseElement = showcase => {
+    if(showcase.kind === "blog"){
+      return <BlogCard key={showcase.id} blog={showcase} />
+    } else {
+      return <ProjectCard key={showcase.id} project={showcase} />
+    }
+  }
 
   return (
     <div>
-      ShowcaseList
+      {showcases?.map(showcase => createShowcaseElement(showcase))}
     </div>
   )
 }

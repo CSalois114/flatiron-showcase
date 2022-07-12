@@ -1,8 +1,9 @@
-import React from 'react'
-import { useEffect } from 'react'
+import React from 'react';
+import ShowcaseList from './ShowcaseList';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { setUser } from "../features/user"
-import { setSkills } from "../features/skills"
+import { setUser } from "../features/user";
+import { setSkills } from "../features/skills";
 import { clearUser } from '../features/user';
 
 export default function User() {
@@ -25,7 +26,7 @@ export default function User() {
 
   return (
     <div>
-      {user.first_name}
+      <ShowcaseList showcases={user.showcases} />
     </div>
   )
 }
