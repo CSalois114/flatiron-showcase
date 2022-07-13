@@ -15,10 +15,10 @@ export default function ShowcaseCard({ showcase }) {
           <span className='showcaseCardName'>{showcase.name}</span>
           {user?.first_name ? 
             null :
-            <span 
-              className='showcaseCardUser'
-            >
-              {` - Created By: ${showcase.user.first_name} ${showcase.user.last_name}`}
+            <span className='showcaseCardUser'>{" - "}   
+              <a href={`/users/${showcase.user?.id}`}>
+                {`${showcase.user?.first_name} ${showcase.user?.last_name}`}
+              </a>
             </span>
           }
         </p>

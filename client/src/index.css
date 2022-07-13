@@ -123,5 +123,14 @@ h4 {
 }
 
 .showcaseCardUser {
-  color: gray
+  color: gray;
+  font-size: 90%;
+}
+
+.showcaseCardName {
+  font-size: 100%;
+}
+
+.showcaseCardFirstLine {
+  margin-top: 5px;
 }
