@@ -155,3 +155,11 @@ h4 {
   left: 110px;
   bottom: 0px
 }
+
+.navBar.left {
+  display: inline;
+}
+
+.navBar.right {
+  float: right;
+}

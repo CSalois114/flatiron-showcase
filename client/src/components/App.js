@@ -2,6 +2,7 @@ import User from './User'
 import ContextMenu from './ContextMenu'
 import UserList from './UserList'
 import Home from './Home'
+import NavBar from './NavBar'
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <ContextMenu />
       </div>
       <div id="contentWrapper">
+        <NavBar />
         <div id="content">
           <Routes>
             <Route path="/" element={<Home />} />
