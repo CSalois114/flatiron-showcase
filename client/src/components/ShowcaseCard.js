@@ -12,9 +12,15 @@ export default function ShowcaseCard({ showcase }) {
       <div className='showcaseCardInfoWrapper' >
         <p className='showcaseCardFirstLine'>
           <span className='showcaseCardKind'>{showcase.kind === "blog" ? "Article" : "Project"}</span>
-          <span> - </span>
           <span className='showcaseCardName'>{showcase.name}</span>
-          {user.first_name || <span> showcase maker name </span>}
+          {user?.first_name ? 
+            null :
+            <span 
+              className='showcaseCardUser'
+            >
+              {` - Created By: ${showcase.user.first_name} ${showcase.user.last_name}`}
+            </span>
+          }
         </p>
         
       </div>

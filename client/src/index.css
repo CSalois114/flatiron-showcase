@@ -112,7 +112,16 @@ h4 {
 
 .showcaseCard .showcaseCardKind {
   display: inline-block;
-  min-width: 54px;
+  min-width: 59px;
   color: red;
   text-align: center;
+  border: 2px gray solid;
+  box-sizing: border-box;
+  background-color: lightblue;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+
+.showcaseCardUser {
+  color: gray
 }

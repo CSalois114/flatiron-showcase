@@ -5,11 +5,11 @@ class ShowcasesController < ApplicationController
   def index
     if params[:user_id]
       @showcases = Showcase.where(user_id: params[:user_id])
+      render json: @showcases, include: []
     else
       @showcases = Showcase.all
+      render json: @showcases, include: [:skills, :user]
     end
-
-    render json: @showcases, include: []
   end
 
   # GET /showcases/1

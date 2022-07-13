@@ -1,8 +1,9 @@
 import React from 'react'
 import ShowcaseCard from './ShowcaseCard'
 import { useSelector } from 'react-redux'
-export default function ShowcaseList({ showcases }) {
+export default function ShowcaseList() {
   const filters = useSelector(state => state.skills.value.filters)
+  const showcases = useSelector(state => state.showcases.value)
 
   const filteredShowcases = () => {
     if(filters[0]) {
