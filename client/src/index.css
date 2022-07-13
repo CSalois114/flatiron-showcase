@@ -139,10 +139,13 @@ h4 {
 .showcaseCardDescription {
   margin-top: 3px;
   color: rgb(48, 48, 48);
+  max-height: 55px;
+  overflow: hidden;
 }
 
 .showcaseCardInfoWrapper {
   position: relative;
+  height: 110px
 }
 
 .showcaseCardSkills {
@@ -150,5 +153,5 @@ h4 {
   font-size: 80%;
   position: absolute;
   left: 110px;
-  bottom: -70px
+  bottom: 0px
 }

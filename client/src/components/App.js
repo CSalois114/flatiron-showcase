@@ -1,5 +1,4 @@
 import User from './User'
-import SearchBar from './SearchBar'
 import ContextMenu from './ContextMenu'
 import UserList from './UserList'
 import Home from './Home'
@@ -13,7 +12,6 @@ function App() {
         <ContextMenu />
       </div>
       <div id="contentWrapper">
-        <SearchBar />
         <div id="content">
           <Routes>
             <Route path="/" element={<Home />} />

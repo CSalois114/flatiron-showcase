@@ -1,5 +1,6 @@
 import React from 'react'
 import UserCard from "./UserCard"
+import SearchBar from './SearchBar';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { setUsers } from "../features/users"
@@ -36,6 +37,7 @@ export default function UserList() {
   
   return (
     <div>
+       <SearchBar />
       { filteredUsers("skills", skillFilters).map(user => (
         <UserCard 
           key={user.id} 
