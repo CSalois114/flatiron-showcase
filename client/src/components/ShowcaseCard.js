@@ -1,11 +1,20 @@
 import React from 'react'
 import { useSelector} from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 export default function ShowcaseCard({ showcase }) {
   const user = useSelector(state => state.user.value)
+  const navigate = useNavigate()
+
+  const handleCardClick = () => {
+    showcase.kind === "blog" && window.open(showcase.url)
+  }
 
   return (
-    <div className={`showcaseCard ${showcase.kind}`}>
+    <div 
+      className={`showcaseCard ${showcase.kind}`}
+      onClick={() => handleCardClick()}
+    >
       <div className='showcaseCardImgWrapper'>
         <img className='showcaseCardImg' src={showcase.preview_image} />
       </div>
@@ -16,7 +25,9 @@ export default function ShowcaseCard({ showcase }) {
           {user?.first_name ? 
             null :
             <span className='showcaseCardUser'>{" - "}   
-              <a href={`/users/${showcase.user?.id}`}>
+              <a
+                onClick={(e) => e.stopPropagation()} 
+                href={`/users/${showcase.user?.id}`}>
                 {`${showcase.user?.first_name} ${showcase.user?.last_name}`}
               </a>
             </span>
