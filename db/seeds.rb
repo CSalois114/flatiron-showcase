@@ -22,6 +22,13 @@ github_repository = [
   "https://github.com/CSalois114/react-typing-game"
 ]
 
+preview_images = [
+  "https://blog.hubspot.com/hs-fs/hubfs/Google%20Drive%20Integration/How%20to%20Code%20a%20Website%20in%206%20Easy%20Steps%20(V7%20-%20CMS%20upload)-1.jpeg?width=650&name=How%20to%20Code%20a%20Website%20in%206%20Easy%20Steps%20(V7%20-%20CMS%20upload)-1.jpeg",
+  "https://theartsdevelopmentcompany.org.uk/wp-content/uploads/2019/02/Website-Building-Landscape-1280x640.jpg",
+  "https://s.w.org/images/home/screen-themes.png?3",
+  "https://colorlib.com/cdn-cgi/image/width=1200,height=972,fit=crop,quality=80,format=auto,onerror=redirect,metadata=none/wp-content/uploads/sites/2/one-page-website-builders.jpg"
+]
+
 50.times do 
   Skill.find_or_create_by!(name: Faker::Hacker.adjective)
 end
@@ -64,6 +71,7 @@ skills = Skill.all
       description: Faker::Hacker.say_something_smart,
       url: is_project ? ["https://csalois114.github.io/portfolio-website/", nil].sample : medium_articles.sample,
       kind: kind,
+      preview_image: preview_images.sample,
       position: i
     )
 

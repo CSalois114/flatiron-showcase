@@ -81,3 +81,15 @@ h4 {
   color: gray;
 }
 
+.previewImageCard {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.blogCard > img {
+  float: left;
+}
+
+.blogCard {
+  height: 110px;
+}

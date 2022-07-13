@@ -56,7 +56,7 @@ class ShowcasesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def showcase_params
-      params.require(:showcase).permit(:user_id, :name, :description, :url, :kind, :position)
+      params.require(:showcase).permit(:user_id, :name, :description, :url, :kind, :position, :preview_image)
     end
 
     #update the position for all showcases if one changes
