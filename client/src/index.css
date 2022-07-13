@@ -111,7 +111,6 @@ h4 {
 }
 
 .showcaseCard .showcaseCardKind {
-  display: inline-block;
   min-width: 59px;
   color: red;
   text-align: center;
@@ -120,17 +119,36 @@ h4 {
   background-color: lightblue;
   border-radius: 8px;
   margin-right: 5px;
+  float: right;
 }
 
 .showcaseCardUser {
   color: gray;
-  font-size: 90%;
+  font-size: 80%;
 }
 
 .showcaseCardName {
-  font-size: 100%;
+  display: inline;
+  margin: 0;
 }
 
 .showcaseCardFirstLine {
   margin-top: 5px;
+}
+
+.showcaseCardDescription {
+  margin-top: 3px;
+  color: rgb(48, 48, 48);
+}
+
+.showcaseCardInfoWrapper {
+  position: relative;
+}
+
+.showcaseCardSkills {
+  color: gray;
+  font-size: 80%;
+  position: absolute;
+  left: 110px;
+  bottom: -70px
 }

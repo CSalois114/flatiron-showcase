@@ -10,9 +10,9 @@ export default function ShowcaseCard({ showcase }) {
         <img className='showcaseCardImg' src={showcase.preview_image} />
       </div>
       <div className='showcaseCardInfoWrapper' >
-        <p className='showcaseCardFirstLine'>
+        <div className='showcaseCardFirstLine'>
+          <h4 className='showcaseCardName'>{showcase.name}</h4>
           <span className='showcaseCardKind'>{showcase.kind === "blog" ? "Article" : "Project"}</span>
-          <span className='showcaseCardName'>{showcase.name}</span>
           {user?.first_name ? 
             null :
             <span className='showcaseCardUser'>{" - "}   
@@ -21,8 +21,11 @@ export default function ShowcaseCard({ showcase }) {
               </a>
             </span>
           }
-        </p>
+        </div>
+
+        <p className='showcaseCardDescription'>{showcase.description}</p>
         
+        <p className='showcaseCardSkills'>{showcase.skills.map(skill => skill.name).join(" | ")}</p> 
       </div>
     </div>
   )
