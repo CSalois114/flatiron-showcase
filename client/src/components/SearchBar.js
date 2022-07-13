@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { setContent } from '../features/content'
+import { setUsers } from '../features/users'
 
 export default function SearchBar() {
   const [searchField, setSearchField] = useState("");
@@ -12,7 +12,7 @@ export default function SearchBar() {
     const searchUrl = e.target.value ? `/search/${e.target.value}` : ""
     fetch(`/${searchType}${searchUrl}`)
     .then(r => r.json())
-    .then(content => dispatch(setContent(content)))
+    .then(data => dispatch(setUsers(data)))
   }
   return (
     <div id="searchBar" >

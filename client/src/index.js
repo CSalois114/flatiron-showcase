@@ -6,15 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter} from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import contentReducer from "./features/content";
+import usersReducer from "./features/users";
 import skillsReducer from "./features/skills";
 import userReducer from "./features/user"
+import showcasesReducer from './features/showcases';
 
 const store = configureStore({
   reducer: {
-    content: contentReducer,
+    users: usersReducer,
     skills: skillsReducer,
-    user: userReducer
+    user: userReducer,
+    showcases: showcasesReducer
   }
 })
 

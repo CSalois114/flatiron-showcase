@@ -2,17 +2,17 @@ import React from 'react'
 import UserCard from "./UserCard"
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { setContent } from "../features/content"
+import { setUsers } from "../features/users"
 import { setSkills } from "../features/skills"
 
 export default function UserList() {
-  const contentArr = useSelector((state) => state.content.value);
+  const users = useSelector((state) => state.users.value);
   const skillFilters = useSelector((state) => state.skills.value.filters)
   const dispatch = useDispatch();
 
-  const filteredContent = (filterType, filters) => {
+  const filteredUsers = (filterType, filters) => {
       if(filters[0]) {
-        return contentArr.filter(content => (
+        return users.filter(content => (
           filters.every(filter => (
             content[filterType].some(contentAtr => (
               contentAtr.id === filter.id)))
@@ -20,14 +20,14 @@ export default function UserList() {
         )
       )
       } else {
-        return contentArr
+        return users
       }
   }
 
   useEffect(() => {
     fetch("/users")
     .then(r => r.json())
-    .then(users => dispatch(setContent(users)))
+    .then(users => dispatch(setUsers(users)))
 
     fetch("/skills")
     .then(r => r.json())
@@ -36,7 +36,7 @@ export default function UserList() {
   
   return (
     <div>
-      { filteredContent("skills", skillFilters).map(user => (
+      { filteredUsers("skills", skillFilters).map(user => (
         <UserCard 
           key={user.id} 
           user={user} 

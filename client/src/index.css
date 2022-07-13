@@ -81,15 +81,38 @@ h4 {
   color: gray;
 }
 
-.previewImageCard {
-  max-width: 100px;
-  max-height: 100px;
+.showcaseCardImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: gray 2px solid;
+  box-sizing: border-box;
 }
 
-.blogCard > img {
+.showcaseCardImgWrapper {
   float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding: 5px;
 }
 
-.blogCard {
+.showcaseCard {
   height: 110px;
+  border: gray 2px solid;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.showcaseCard.project {
+  background-color: lightgray;
+}
+
+.showcaseCard .showcaseCardKind {
+  display: inline-block;
+  min-width: 54px;
+  color: red;
+  text-align: center;
 }
