@@ -20,6 +20,7 @@ export default function SearchBar() {
         type="text" 
         onChange={handleChange}
         value={searchField}
+        placeholder="Search Users By Name"
       />
     </div>
   )

@@ -9,16 +9,21 @@ export default function NavBar() {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   return (
-    <div>
+    <div id="navBar">
       <div className='navBar left'>
         <button onClick={() => navigate("/")}>Browse All</button>
         <button onClick={() => navigate("/users")}>Find User</button>
       </div>
 
       <div className='navBar right'>
-        <span onClick={() => navigate("/profile")}>{user?.name}</span>
-        <button onClick={() => loginWithRedirect()}>Log In</button>
-        <button onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>
+        {user ?
+          <>
+            <button onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>
+            <img id="tinyProfileImage" src={user.picture} onClick={() => navigate("/login")} />
+          </> 
+        :
+          <button onClick={() => loginWithRedirect()}>Log In</button>
+        }
       </div>
     </div>
   )

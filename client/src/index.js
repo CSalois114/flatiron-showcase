@@ -27,7 +27,7 @@ root.render(
   <Auth0Provider
     domain="dev-s088tu6z.us.auth0.com"
     clientId="yg1bceygqIoyncUbj1gak2rCRIl8sBO3"
-    redirectUri={"http://localhost:4000/profile"}
+    redirectUri={"http://localhost:4000/login"}
     audience="https://flatiron-showcase/api/"
     scope="create:user"
   >

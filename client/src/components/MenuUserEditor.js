@@ -20,7 +20,7 @@ export default function MenuUserEditor({ user, toggleEditingMode }){
     url: ""
   }
   const [socialLink, setSocialLink] = useState(blankSocialLink)
-  
+
   const handleSaveClick = () => {
     setErrors({})
     fetch(`/user_infos/${user.user_info.id}`, {
@@ -127,8 +127,8 @@ export default function MenuUserEditor({ user, toggleEditingMode }){
         <h4 id="aboutMeHeader">About Me</h4>
         <textarea id="editAboutMe" onChange={(e) => setUserInfo({...userInfo, about_me: e.target.value})} value={userInfo.about_me} placeholder="About me..."/>
       </div>
-    </div>
     <button className='menuEditButton' onClick={handleSaveClick}>Save</button>
+    </div>
     </>
   )
 }

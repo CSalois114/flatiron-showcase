@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background: rgb(237, 221, 210);
 }
 
 code {
@@ -20,7 +20,7 @@ code {
   max-width: 1200px;
   margin: auto;
   padding: 10px;
-  background: rgb(243, 228, 228);
+  background: rgb(130, 115, 151);
   min-height: 100vh;
 }
 
@@ -38,16 +38,18 @@ code {
 
 #contextMenu {
   min-height: 100%;
-  background: black;
+  background: rgb(54, 48, 98);
   text-align: center;
   border-radius: 8px;
   padding-top: 10px;
 }
 
 #searchBar {
-  background: rgb(190, 180, 180);
-  padding: 5px;
-  border-radius: 6px;
+  padding-top: 5px;
+}
+
+#searchBar input {
+  width: 300px;
 }
 
 h4 {
@@ -58,12 +60,14 @@ h4 {
   max-width: 50px;
   border-radius: 50%;
   border: 2px solid gray;
+  margin-top: 3px;
+  margin-left: 3px;
 }
 
 #userImage {
-  max-width: 100px;
+  max-width: 130px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 2px solid rgb(54, 48, 98);
 }
 
 .userInfo {
@@ -108,16 +112,20 @@ h4 {
 }
 
 .showcaseCard.project {
-  background-color: lightgray;
+  background-color: rgba(202, 213, 233, 0.652);
+}
+
+.showcaseCard.blog {
+  background-color: rgba(202, 223, 233, 0.926);
 }
 
 .showcaseCard .showcaseCardKind {
   min-width: 59px;
-  color: red;
+  color: rgb(85, 85, 85);
   text-align: center;
   border: 2px gray solid;
   box-sizing: border-box;
-  background-color: lightblue;
+  background-color: rgb(242, 242, 242);
   border-radius: 8px;
   margin-right: 5px;
   float: right;
@@ -163,6 +171,9 @@ h4 {
 
 .navBar.right {
   float: right;
+  width: 120px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 #projectPreviewImgContainer {
@@ -184,10 +195,11 @@ h4 {
 }
 
 #projectHeader {
-  border: 3px solid gray;
+  /* border: 3px solid gray; */
   overflow: auto;
   border-radius: 8px;
-  margin-top: 10px
+  margin-top: 10px;
+  background: rgb(197, 197, 212);
 }
 
 #projectName {
@@ -269,9 +281,9 @@ iframe {
 
 .socialLink {
   margin: 5px 0 0 0;
-  border: 3px solid black;
+  border: 2px solid black;
   color: white;
-  background: black;
+  background: rgb(54, 48, 98);
   border-radius: 8px;
   cursor: pointer;
 }
@@ -281,7 +293,7 @@ iframe {
 }
 
 #menuUserWrapper {
-  background-color: rgb(60, 60, 60);
+  background-color: rgb(77, 76, 125);
   padding: 10px;
   margin: 0px 10px 0px 10px;
   border-radius: 8px;
@@ -319,7 +331,7 @@ iframe {
   padding-left: 3px;
   border-radius: 8px;
   color: white;
-  background: rgb(60, 60, 60);
+  background: rgb(77, 76, 125);
   overflow: hidden;
   cursor: pointer;
 }
@@ -333,7 +345,7 @@ iframe {
 }
 
 .skill.added:hover {
-  background: rgb(60, 60, 60);
+  background: rgb(77, 76, 125);
 }
 
 #skillsSearchWrapper input {
@@ -348,7 +360,7 @@ iframe {
 }
 
 input {
-  color: black;
+  color: rgb(54, 48, 98);
   text-align: center;
 }
 
@@ -360,3 +372,35 @@ input {
 .error {
   color: rgb(255, 150, 150);
 }
+
+#tinyProfileImage {
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  float: right;
+  border: 1px solid white
+}
+
+#navBar {
+  background: rgb(77, 76, 125);
+  height: 40px;
+  border-radius: 8px;
+}
+
+#navBar button {
+  margin: 10px 0px 0 10px;
+  border-radius: 5px;
+}
+ .userCard {
+  background: rgba(235, 240, 242, 0.926);
+  border-radius: 8px;
+  margin-top: 6px;
+  width: 800px;
+ }
+
+ .menuEditButton {
+  margin-top: 4px;
+  width: 60px;
+  border-radius: 5px;
+ }
