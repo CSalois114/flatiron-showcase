@@ -2,7 +2,7 @@ import React from 'react'
 import noUserImg from '../images/no_user.png'  
 import { useNavigate } from 'react-router-dom'
 
-export default function MenuUser({ user }){
+export default function MenuUserEditor({ user }){
   const navigate = useNavigate()
 
   const email = user.user_info?.email

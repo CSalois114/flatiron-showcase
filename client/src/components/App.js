@@ -4,6 +4,7 @@ import UserList from './UserList'
 import Home from './Home'
 import NavBar from './NavBar'
 import Project from './Project'
+import Profile from './Profile'
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/users" element={<UserList />} />
             <Route path="/users/:id" element={<User />} />
             <Route path="/users/:user_id/showcases/:id" element={<Project />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
       </div>

@@ -36,8 +36,7 @@ skills = Skill.all
 
 20.times do 
   user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name:  Faker::Name.last_name,
+    name:  Faker::Name.name,
     image: [Faker::Avatar.image, nil].sample
   )
 
@@ -107,7 +106,7 @@ skills = Skill.all
         Partner.create!(
           showcase: showcase,
           user: partner,
-          name: partner ? "#{partner.first_name} #{partner.last_name}" : Faker::Name.name
+          name: partner ? "#{partner.name}" : Faker::Name.name
         )
       end
     end

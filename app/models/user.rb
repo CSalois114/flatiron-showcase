@@ -8,6 +8,5 @@ class User < ApplicationRecord
 
   has_one :user_info, dependent: :destroy
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :name, presence: true
 end

@@ -3,6 +3,7 @@ import UserCard from "./UserCard"
 import SearchBar from './SearchBar';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
+import { clearUser } from "../features/user"
 import { setUsers } from "../features/users"
 import { setSkills } from "../features/skills"
 
@@ -26,6 +27,8 @@ export default function UserList() {
   }
 
   useEffect(() => {
+    dispatch(clearUser())
+
     fetch("/users")
     .then(r => r.json())
     .then(users => dispatch(setUsers(users)))

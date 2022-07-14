@@ -23,13 +23,13 @@ export default function ShowcaseCard({ showcase }) {
         <div className='showcaseCardFirstLine'>
           <h4 className='showcaseCardName'>{showcase.name}</h4>
           <span className='showcaseCardKind'>{showcase.kind === "blog" ? "Article" : "Project"}</span>
-          {user?.first_name ? 
+          {user?.name ? 
             null :
             <span className='showcaseCardUser'>{" - "}   
               <a
                 onClick={(e) => e.stopPropagation()} 
                 href={`/users/${showcase.user?.id}`}>
-                {`${showcase.user?.first_name} ${showcase.user?.last_name}`}
+                {showcase.user?.name}
               </a>
             </span>
           }

@@ -16,7 +16,7 @@ export default function NavBar() {
       </div>
 
       <div className='navBar right'>
-        <span>{user?.name}</span>
+        <span onClick={() => navigate("/profile")}>{user?.name}</span>
         <button onClick={() => loginWithRedirect()}>Log In</button>
         <button onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>
       </div>

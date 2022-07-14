@@ -1,5 +1,5 @@
 class UserProfileSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :image
+  attributes :id, :name, :image
 
   has_one :user_info
   has_many :skills

@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   delete '/users/:user_id/showcases/:id', to: 'showcases#destroy'
 
   get '/users/search/:search', to: 'users#index'
+  get '/profile/:sub', to: 'profile#show'
+  post '/profile', to: 'profile#create'
 end
