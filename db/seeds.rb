@@ -64,11 +64,15 @@ skills = Skill.all
   rand(3..10).times do |i|
     kind = ["project", "blog"].sample
     is_project = kind == "project"
+    description = ""
+    rand(1..5).times do
+      description += " " + Faker::Hacker.say_something_smart
+    end
 
     showcase = Showcase.create!(
       user: user,
       name: is_project ? Faker::App.name : Faker::Hipster.sentence(word_count: rand(2..4)),
-      description: Faker::Hacker.say_something_smart,
+      description: description,
       url: is_project ? ["https://csalois114.github.io/portfolio-website/", nil].sample : medium_articles.sample,
       kind: kind,
       preview_image: preview_images.sample,
