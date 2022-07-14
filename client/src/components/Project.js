@@ -45,9 +45,9 @@ export default function Project() {
       )}
 
       <div id="projectLinksWrapper">
-        {project.videos && (<div id="videosWrapper">
+        <div id="videosWrapper">
           {project.videos && project.videos.map(video => <Video key={video.id} video={video}/>)}
-        </div>)}
+        </div>
 
         <div id="repositoriesWrapper" >
           <h4>GitHub Repositories</h4>

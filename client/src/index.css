@@ -38,9 +38,9 @@ code {
 
 #contextMenu {
   min-height: 100%;
-  background: gray;
+  background: black;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 8px;
   padding-top: 10px;
 }
 
@@ -229,9 +229,8 @@ iframe {
 }
 
 #repositoriesWrapper {
-  border: 3px gray solid;
   border-radius: 8px;
-  min-height: 88px;
+  padding-bottom: 5px;
   position: absolute;
   top: 10px;
   right: 0;
@@ -241,7 +240,109 @@ iframe {
 
 .repositoryButton {
   width: 200px;
+  height: 25px;
   margin: 3px;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+#menuUser:hover {
+  background: rgb(140, 140, 140);
+}
+
+#menuUser {
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+#userInfo > *{
+  font-size: 93%;
+  margin: 3px;
+  color: rgb(187, 187, 187)
+}
+
+#userLinksHeader {
+  padding-top: 10px;
+  color: lightGray
+}
+
+.socialLink {
+  margin: 5px 0 0 0;
+  border: 3px solid black;
+  color: white;
+  background: black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.socialLink:hover{
+  background: rgb(140, 140, 140);
+}
+
+#menuUserWrapper {
+  background-color: rgb(60, 60, 60);
+  padding: 10px;
+  margin: 0px 10px 0px 10px;
+  border-radius: 8px;
+
+}
+
+#userName {
+  color: white;
+}
+
+#userEmail {
+  color: lightBlue;
+}
+
+#aboutMeWrapper {
+  margin-top: 10px;
+  color: lightGray
+}
+
+#aboutMe {
+  font-size: 90%;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: -5px;
+}
+
+#skillFilter {
+  color: lightGray
+}
+
+.skill {
+  text-align: left;
+  border: 1px solid gray;
+  margin: 3px 25px;
+  padding-left: 3px;
+  border-radius: 8px;
+  color: white;
+  background: rgb(60, 60, 60);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.skill:hover {
+  background: rgb(140, 140, 140);
+}
+
+.skill.added {
+  background: rgb(140, 140, 140);
+}
+
+.skill.added:hover {
+  background: rgb(60, 60, 60);
+}
+
+#skillsSearchWrapper input {
+  border-radius: 4px;
+}
+
+#skillFilter button {
+  border-radius: 8px;
+  width: 50%;
+  height: 25px;
   cursor: pointer;
 }

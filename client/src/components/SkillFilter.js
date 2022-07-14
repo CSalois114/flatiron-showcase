@@ -13,8 +13,8 @@ export default function SkillFilter() {
   const incrementSkills = () => setNumOfSkills(numOfSkills + 5)
 
   const handleAddFilterClick = skill => {
-    dispatch(addFilter(skill));
     setSearchTerm("")
+    dispatch(addFilter(skill));
   }
 
   return (
@@ -27,23 +27,25 @@ export default function SkillFilter() {
       <div id="filterSkillsWrapper">
         {filters.map(skill => (
           <div
+            className='skill added'
             key={skill.id}
             onClick={() => dispatch(removeFilter(skill))}
-            >- {skill.name}
+            >- <span>{skill.name}</span>
           </div>
         ))}
       </div>
 
       {skills[0] && <div id="skillsSearchWrapper">
-        <input type="text" onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search Skills"/>
+        <input type="text" onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search Skills" value={searchTerm} />
       </div>}
 
       <div id="skillsListWrapper">
         {skills?.filter(skill => skill.name?.includes(searchTerm)).slice(0, numOfSkills).map(skill => (
           <div
+            className='skill notAdded'
             key={skill.id}
             onClick={() => handleAddFilterClick(skill)}
-            >+ {skill.name}
+            >+ <span>{skill.name}</span>
           </div>
         ))}
       </div>
