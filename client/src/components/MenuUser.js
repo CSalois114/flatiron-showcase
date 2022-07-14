@@ -22,7 +22,7 @@ export default function MenuUser({ user }){
       </div>
       <div id="userLinks">
         <h4 id="userLinksHeader">My Links</h4>
-        {user.user_info?.social_links.map(link => (
+        {user.user_info?.social_links?.map(link => (
           <p 
             className='socialLink' 
             key={link.id}

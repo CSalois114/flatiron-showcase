@@ -18,7 +18,7 @@ class SocialLinksController < ApplicationController
     @social_link = SocialLink.new(social_link_params)
 
     if @social_link.save
-      render json: @social_link, status: :created, location: @social_link
+      render json: @social_link, status: :created
     else
       render json: @social_link.errors, status: :unprocessable_entity
     end

@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get '/users/search/:search', to: 'users#index'
   get '/profile/:sub', to: 'profile#show'
   post '/profile', to: 'profile#create'
+  post '/social_links', to: 'social_links#create'
 end

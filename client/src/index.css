@@ -346,3 +346,17 @@ iframe {
   height: 25px;
   cursor: pointer;
 }
+
+input {
+  color: black;
+  text-align: center;
+}
+
+#editAboutMe{
+  width: 155px;
+  min-height: 300px;
+}
+
+.error {
+  color: rgb(255, 150, 150);
+}

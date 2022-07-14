@@ -69,6 +69,8 @@ const Profile = () => {
     getUserData();
   }, [getAccessTokenSilently, user?.sub]);
 
+  
+
   return (
     isAuthenticated && (
       <div>
