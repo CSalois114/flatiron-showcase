@@ -104,6 +104,7 @@ h4 {
   border: gray 2px solid;
   border-radius: 8px;
   margin: 5px;
+  cursor: pointer;
 }
 
 .showcaseCard.project {
@@ -162,4 +163,74 @@ h4 {
 
 .navBar.right {
   float: right;
+}
+
+#projectPreviewImgContainer {
+  float: right;
+}
+
+#projectPreviewImg {
+  max-width: 475px;
+  max-height: 475px;
+  float: right;
+  margin: 10px 10px 10px 0;
+  border-radius: 8px;
+}
+
+#projectInfoContainer {
+  max-width: 475px;
+  display: inline-block;
+  margin: 10px
+}
+
+#projectHeader {
+  border: 3px solid gray;
+  overflow: auto;
+  border-radius: 8px;
+  margin-top: 10px
+}
+
+#projectName {
+  margin: 0;
+}
+
+#projectHostedWrapper {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#tryItNow {
+  width: 140px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 120%;
+  cursor: pointer;
+}
+
+#projectSkills {
+  color: gray;
+  font-size: 80%;
+  margin: 0;
+}
+
+iframe {
+  width: 700px;
+  max-width: 700px;
+  height: 393.75px;
+}
+
+.videoWrapper {
+  padding: 10px;
+}
+
+#projectLinksWrapper {
+  position: relative;
+}
+
+#repositoriesWrapper {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 260px;
 }

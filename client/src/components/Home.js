@@ -2,13 +2,16 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setShowcases } from '../features/showcases'
-import { setSkills } from '../features/skills'
+import { setSkills, clearSkills } from '../features/skills'
 import ShowcaseList from './ShowcaseList'
 
 export default function Home() {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    dispatch(clearSkills())
+    dispatch(setShowcases([]))
+
     fetch('/showcases')
     .then(r => r.json())
     .then(data => dispatch(setShowcases(data)))

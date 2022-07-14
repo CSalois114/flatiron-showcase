@@ -8,6 +8,7 @@ export default function ShowcaseCard({ showcase }) {
 
   const handleCardClick = () => {
     showcase.kind === "blog" && window.open(showcase.url)
+    showcase.kind === "project" && navigate(`/users/${user?.id || showcase.user.id}/showcases/${showcase.id}`)
   }
 
   return (

@@ -3,6 +3,7 @@ import ContextMenu from './ContextMenu'
 import UserList from './UserList'
 import Home from './Home'
 import NavBar from './NavBar'
+import Project from './Project'
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/users" element={<UserList />} />
             <Route path="/users/:id" element={<User />} />
+            <Route path="/users/:user_id/showcases/:id" element={<Project />} />
           </Routes>
         </div>
       </div>
