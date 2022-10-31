@@ -22,7 +22,7 @@ export default function NavBar() {
             <img id="tinyProfileImage" src={user.picture} onClick={() => navigate("/login")} />
           </> 
         :
-          <button onClick={() => loginWithRedirect()}>Log In</button>
+          <button onClick={() => loginWithRedirect()}>Log In | Sign Up</button>
         }
       </div>
     </div>

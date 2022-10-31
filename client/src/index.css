@@ -20,7 +20,7 @@ code {
   max-width: 1200px;
   margin: auto;
   padding: 10px;
-  background: rgb(130, 115, 151);
+  background: rgb(132, 119, 150);
   min-height: 100vh;
 }
 
@@ -38,7 +38,7 @@ code {
 
 #contextMenu {
   min-height: 100%;
-  background: rgb(54, 48, 98);
+  background: rgb(55, 51, 83);
   text-align: center;
   border-radius: 8px;
   padding-top: 10px;
@@ -62,6 +62,7 @@ h4 {
   border: 2px solid gray;
   margin-top: 3px;
   margin-left: 3px;
+  margin-right: 3px;
 }
 
 #userImage {
@@ -171,7 +172,7 @@ h4 {
 
 .navBar.right {
   float: right;
-  width: 120px;
+  width: 190px;
   height: 40px;
   margin-right: 10px;
 }
@@ -391,6 +392,7 @@ input {
 #navBar button {
   margin: 10px 0px 0 10px;
   border-radius: 5px;
+  width: 130px;
 }
  .userCard {
   background: rgba(235, 240, 242, 0.926);
@@ -403,4 +405,10 @@ input {
   margin-top: 4px;
   width: 60px;
   border-radius: 5px;
+ }
+
+ .deleteLink {
+  float: right;
+  margin-right: 7px;
+  color: rgb(213, 59, 59);
  }

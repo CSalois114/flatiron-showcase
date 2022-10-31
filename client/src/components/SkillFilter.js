@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addFilter, removeFilter, clearFilters } from "../features/skills";
 
 export default function SkillFilter() {
-  const [numOfSkills, setNumOfSkills] = useState(5)
+  const [numOfSkills, setNumOfSkills] = useState(10)
   const [searchTerm, setSearchTerm] = useState("")
   const skills = useSelector((state) => state.skills.value.filteredSkills);
   const filters = useSelector((state) => state.skills.value.filters);
